@@ -11,8 +11,12 @@ namespace Telas
         private System.ComponentModel.IContainer components = null;
 
         ListView listView;
+        Button btnVoltar;
         public CategoriaView()
         {
+
+            btnVoltar = new Campos.ButtonField("Voltar", 25, 450, 100, 30);
+			btnVoltar.Click += new EventHandler(this.btnVoltarClick);
 
             listView = new Campos.FieldListView(25, 25, 450, 400);
 			listView.View = View.Details;
@@ -30,12 +34,19 @@ namespace Telas
 			listView.Sorting = SortOrder.Ascending;
 
             this.Controls.Add(this.listView);
+            this.Controls.Add(this.btnVoltar);
 
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 500);
             this.Text = "Categoria";
         }
+
+        public void btnVoltarClick(object sender, EventArgs e)
+        {
+            this.Close();
+        }  
+        
     }
 
 }
