@@ -12,7 +12,6 @@ namespace PasswordManager
         {
             Application.EnableVisualStyles();
             Application.Run(new Login());
-            Console.WriteLine("adsada");
         }
     }
 }
