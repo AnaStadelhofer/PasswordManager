@@ -8,6 +8,56 @@ namespace Telas
 {
     public class Menu : Form
     {
+        private System.ComponentModel.IContainer components = null;
+
+        Label lblTitle;
+        Button btnCategoria;
+        Button btnTags;
+        Button btnSenha;
+        Button btnUsuario;
+        Button btnSair;
+        public Menu()
+        {
+            this.lblTitle = new Campos.LabelFieldTam($"Bem vindo(a)!", 120, 15, 150, 30);
+
+            btnCategoria = new Campos.ButtonField("Categoria", 100, 50, 100, 30);
+			//btnCategoria.Click += new EventHandler(this.btnCategoriaClick);
+
+            btnTags = new Campos.ButtonField("Tags", 100, 90, 100, 30);
+			//btnTags.Click += new EventHandler(this.btnTagsClick);
+
+            btnSenha = new Campos.ButtonField("Senhas", 100, 130, 100, 30);
+			//btnSenha.Click += new EventHandler(this.btnSenhaClick);
+
+            btnUsuario = new Campos.ButtonField("Usuário", 100, 170, 100, 30);
+			//btnUsuario.Click += new EventHandler(this.btnUsuarioClick);
+
+            btnSair = new Campos.ButtonField("Sair", 100, 210, 100, 30);
+			btnSair.Click += new EventHandler(this.btnSairClick);
+
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.btnCategoria);
+            this.Controls.Add(this.btnTags);
+            this.Controls.Add(this.btnSenha);
+            this.Controls.Add(this.btnUsuario);
+            this.Controls.Add(this.btnSair);
+
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(300, 300);
+            this.Text = "Menu";
+        }
+
+        public void btnSairClick(object sender, EventArgs e)
+        {
+            this.Close();
+        }  
+
+        public void btnCategoriaClick(object sender, EventArgs e)
+        {
+            //Categoria CategoriaTela = new Categoria();
+            //CategoriaTela.ShowDialog();
+        }  
 
     }
 
