@@ -20,20 +20,20 @@ namespace Telas
         {
             this.lblTitle = new Campos.LabelFieldTam($"Bem vindo(a)!", 120, 15, 150, 30);
 
-            btnCategoria = new Campos.ButtonField("Categoria", 100, 50, 100, 30);
-			//btnCategoria.Click += new EventHandler(this.btnCategoriaClick);
+            this.btnCategoria = new Campos.ButtonField("Categoria", 100, 50, 100, 30);
+			btnCategoria.Click += new EventHandler(this.btnCategoriaClick);
 
-            btnTags = new Campos.ButtonField("Tags", 100, 90, 100, 30);
+            this.btnTags = new Campos.ButtonField("Tags", 100, 90, 100, 30);
 			//btnTags.Click += new EventHandler(this.btnTagsClick);
 
-            btnSenha = new Campos.ButtonField("Senhas", 100, 130, 100, 30);
+            this.btnSenha = new Campos.ButtonField("Senhas", 100, 130, 100, 30);
 			//btnSenha.Click += new EventHandler(this.btnSenhaClick);
 
-            btnUsuario = new Campos.ButtonField("Usuário", 100, 170, 100, 30);
+            this.btnUsuario = new Campos.ButtonField("Usuário", 100, 170, 100, 30);
 			//btnUsuario.Click += new EventHandler(this.btnUsuarioClick);
 
-            btnSair = new Campos.ButtonField("Sair", 100, 210, 100, 30);
-			btnSair.Click += new EventHandler(this.btnSairClick);
+            this.btnSair = new Campos.ButtonField("Sair", 100, 210, 100, 30);
+			this.btnSair.Click += new EventHandler(this.btnSairClick);
 
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnCategoria);
@@ -55,8 +55,8 @@ namespace Telas
 
         public void btnCategoriaClick(object sender, EventArgs e)
         {
-            //Categoria CategoriaTela = new Categoria();
-            //CategoriaTela.ShowDialog();
+            CategoriaView CategoriaViews = new CategoriaView();
+            CategoriaViews.ShowDialog();
         }  
 
     }
