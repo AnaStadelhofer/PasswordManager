@@ -68,10 +68,10 @@ namespace Models
         }
 
 
-        public static IEnumerable<Categoria> GetCategorias()
+        public static List<Categoria> GetCategorias()
         {
             Context db = new Context();
-            return (from Categoria in db.Categorias select Categoria);
+            return (from Categoria in db.Categorias select Categoria).ToList();
         }
 
         public static Categoria GetCategoria(int Id)
