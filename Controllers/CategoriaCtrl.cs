@@ -15,13 +15,12 @@ namespace Controllers
             
         )
         {
-
             if (String.IsNullOrEmpty(Nome)) {
-                throw new Exception("Número é obrigatório");
+                throw new Exception("Nome é obrigatório");
             }
 
             if (String.IsNullOrEmpty(Descricao)) {
-                throw new Exception("Número é obrigatório");
+                throw new Exception("Descrição é obrigatório");
             }
 
             return new Categoria(Nome, Descricao);
