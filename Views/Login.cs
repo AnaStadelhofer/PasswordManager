@@ -18,7 +18,7 @@ namespace Telas
         Button btnSair;
         public Login()
         {
-            this.BackColor = Color.FromArgb(255, 232, 232);
+            this.BackColor = Color.FromArgb(179, 193, 220);
             this.lblUser = new Campos.LabelField("Usuário", 120, 30);
 
             this.txtUser = new Campos.TextBoxField(60, 60, 180, 20);

@@ -30,7 +30,7 @@ namespace Telas
 			//btnSenha.Click += new EventHandler(this.btnSenhaClick);
 
             this.btnUsuario = new Campos.ButtonField("Usuário", 100, 170, 100, 30);
-			//btnUsuario.Click += new EventHandler(this.btnUsuarioClick);
+			btnUsuario.Click += new EventHandler(this.btnUsuarioClick);
 
             this.btnSair = new Campos.ButtonField("Sair", 100, 210, 100, 30);
 			this.btnSair.Click += new EventHandler(this.btnSairClick);
@@ -58,6 +58,12 @@ namespace Telas
             CategoriaView CategoriaViews = new CategoriaView();
             CategoriaViews.ShowDialog();
         }  
+
+        public void btnUsuarioClick(object sender, EventArgs e)
+        {
+            UsuarioView UsuarioViews = new UsuarioView();
+            UsuarioViews.ShowDialog();
+        } 
 
     }
 

@@ -19,10 +19,6 @@ namespace Controllers
                 throw new Exception("Nome é obrigatório");
             }
 
-            if (String.IsNullOrEmpty(Descricao)) {
-                throw new Exception("Descrição é obrigatório");
-            }
-
             return new Categoria(Nome, Descricao);
         }
 
