@@ -18,20 +18,20 @@ namespace Telas
         Button btnSair;
         public Login()
         {
-            this.BackColor = Color.FromArgb(255, 232, 232);
+            this.BackColor = Color.FromArgb(179, 193, 220);
             this.lblUser = new Campos.LabelField("Usuário", 120, 30);
 
-            this.txtUser = new Campos.TextBoxField(60, 60, 180, 20);
+            this.txtUser = new Campos.TextBoxField(50, 60, 200, 20);
     
             this.lblPassword = new Campos.LabelField("Senha", 120, 100);
 
-            this.txtPass = new Campos.TextBoxField(60, 130, 180, 20);
-            //this.txtPass.PasswordChar = "*";
+            this.txtPass = new Campos.TextBoxField(50, 130, 200, 20);
+            this.txtPass.PasswordChar = '*';
 
-            btnLogar = new Campos.ButtonField("Logar", 100, 180, 100, 30);
+            btnLogar = new Campos.ButtonField("Logar", 50, 220, 100, 30);
 			btnLogar.Click += new EventHandler(this.btnLogarClick);
 
-			btnSair = new Campos.ButtonField("Sair", 100, 220, 100, 30);
+			btnSair = new Campos.ButtonField("Sair", 150, 220, 100, 30);
 			btnSair.Click += new EventHandler(this.btnSairClick);
 
             this.Controls.Add(this.lblUser);
