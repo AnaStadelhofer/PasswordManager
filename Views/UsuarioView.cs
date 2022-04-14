@@ -17,27 +17,16 @@ namespace Telas
         public UsuarioView()
         {
 
+            // 
+
             btnVoltar = new Campos.ButtonField("Voltar", 25, 450, 100, 30);
 			btnVoltar.Click += new EventHandler(this.btnVoltarClick);
             
             btnInsert = new Campos.ButtonField("Cadastrar", 130, 450, 100, 30);
+            btnInsert.Click += new EventHandler(this.btnInsertClick);
 
-            listView = new Campos.FieldListView(25, 25, 450, 400);
-			listView.View = View.Details;
-			foreach(Usuario item in UsuarioCtrl.VisualizarUsuario())
-            {
-                ListViewItem list = new ListViewItem(item.Id + "");
-                list.SubItems.Add(item.Nome);	
-                list.SubItems.Add(item.Email);
-                listView.Items.AddRange(new ListViewItem[]{list});
-            }
-			listView.Columns.Add("Id", -2, HorizontalAlignment.Left);
-    		listView.Columns.Add("Nome", -2, HorizontalAlignment.Left);
-            listView.Columns.Add("Email", -2, HorizontalAlignment.Left);
-			listView.FullRowSelect = true;
-			listView.GridLines = true;
-			listView.AllowColumnReorder = true;
-			listView.Sorting = SortOrder.Ascending;
+            // Select dos registros
+
 
             this.Controls.Add(this.listView);
             this.Controls.Add(this.btnVoltar);
@@ -49,10 +38,17 @@ namespace Telas
             this.Text = "Usuario";
         }
 
+        // Funções dos botões
         public void btnVoltarClick(object sender, EventArgs e)
         {
             this.Close();
-        }  
+        } 
+
+        public void btnInsertClick(object sender, EventArgs e)
+        {
+            CadastrarUsuário CadastrarUsuários = new CadastrarUsuário();
+            CadastrarUsuários.ShowDialog();
+        }   
         
     }
 
