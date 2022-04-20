@@ -27,7 +27,7 @@ namespace Telas
 			btnTags.Click += new EventHandler(this.btnTagClick);
 
             this.btnSenha = new Campos.ButtonField("Senhas", 100, 130, 100, 30);
-			//btnSenha.Click += new EventHandler(this.btnSenhaClick);
+			btnSenha.Click += new EventHandler(this.btnSenhaClick);
 
             this.btnUsuario = new Campos.ButtonField("Usuário", 100, 170, 100, 30);
 			btnUsuario.Click += new EventHandler(this.btnUsuarioClick);
@@ -57,7 +57,13 @@ namespace Telas
         {
             CategoriaView CategoriaViews = new CategoriaView();
             CategoriaViews.ShowDialog();
-        }  
+        }
+
+        public void btnSenhaClick(object sender, EventArgs e)
+        {
+            SenhaView SenhaViews = new SenhaView();
+            SenhaViews.ShowDialog();
+        }   
 
         public void btnUsuarioClick(object sender, EventArgs e)
         {
