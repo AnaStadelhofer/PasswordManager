@@ -27,6 +27,22 @@ namespace Telas
 
             // Select dos registros
 
+            listView = new Campos.FieldListView(25, 25, 450, 400);
+			listView.View = View.Details;
+			foreach(Usuario item in UsuarioCtrl.VisualizarUsuario())
+            {
+                ListViewItem list = new ListViewItem(item.Id + "");
+                list.SubItems.Add(item.Nome);	
+                list.SubItems.Add(item.Email);
+                listView.Items.AddRange(new ListViewItem[]{list});
+            }
+			listView.Columns.Add("Id", -2, HorizontalAlignment.Left);
+    		listView.Columns.Add("Nome", -2, HorizontalAlignment.Left);
+            listView.Columns.Add("Email", -2, HorizontalAlignment.Left);
+			listView.FullRowSelect = true;
+			listView.GridLines = true;
+			listView.AllowColumnReorder = true;
+			listView.Sorting = SortOrder.Ascending;
 
             this.Controls.Add(this.listView);
             this.Controls.Add(this.btnVoltar);
