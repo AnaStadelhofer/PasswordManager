@@ -72,12 +72,12 @@ Para essa aplicação serão necessárias as seguintes tarefas:
 - [ ] Processo de Login
 - [X] Menu Principal
 - [X] Lista de Categorias
-- [ ] Lista de Tags
-- [ ] Lista de Usuários
-- [ ] Lista de Senhas
+- [X] Lista de Tags
+- [X] Lista de Usuários
+- [X] Lista de Senhas
 - [X] Criar Categoria
-- [ ] Criar Tag
-- [ ] Criar Usuário
+- [X] Criar Tag
+- [X] Criar Usuário
 - [ ] Criar Senha
 - [ ] Alterar Categoria
 - [ ] Alterar Tag
