@@ -10,6 +10,15 @@ namespace Controllers
     public class TagCtrl 
     {
 
+        public static Tag InsertTag(string Descricao)
+        {
+
+            if (String.IsNullOrEmpty(Descricao)) {
+                throw new Exception("Descrição é obrigatório");
+            }
+
+            return new Tag(Descricao);
+        }
         public static IEnumerable<Tag> VisualizarTag()
         {
             return Models.Tag.GetTags();  

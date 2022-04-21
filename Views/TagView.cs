@@ -13,13 +13,15 @@ namespace Telas
 
         ListView listView;
         Button btnVoltar;
+        Button btnInsert;
         public TagView()
         {
 
-            // 
-
             btnVoltar = new Campos.ButtonField("Voltar", 25, 450, 100, 30);
 			btnVoltar.Click += new EventHandler(this.btnVoltarClick);
+
+            btnInsert = new Campos.ButtonField("Cadastrar", 130, 450, 100, 30);
+			btnInsert.Click += new EventHandler(this.btnInsertClick);
 
             // Select dos registros
 
@@ -40,6 +42,7 @@ namespace Telas
 
             this.Controls.Add(this.listView);
             this.Controls.Add(this.btnVoltar);
+            this.Controls.Add(this.btnInsert);
         
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -53,6 +56,12 @@ namespace Telas
             this.Close();
         }   
         
+        public void btnInsertClick(object sender, EventArgs e)
+        {
+            CadastrarTag CadastrarTags = new CadastrarTag();
+            CadastrarTags.ShowDialog();
+        }   
+
     }
 
 }
