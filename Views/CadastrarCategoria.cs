@@ -29,7 +29,7 @@ namespace Telas
             btnVoltar = new Campos.ButtonField("Voltar", 50, 300, 100, 30);
 			btnVoltar.Click += new EventHandler(this.btnVoltarClick);
 
-            btnInsert = new Campos.ButtonField("Cadastrar", 180, 300, 100, 30);
+            btnInsert = new Campos.ButtonField("Confirmar", 200, 300, 100, 30);
 			btnInsert.Click += new EventHandler(this.btnInsertClick);
 
             this.Controls.Add(this.lblNome);
