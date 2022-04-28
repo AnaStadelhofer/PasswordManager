@@ -8,6 +8,7 @@ namespace Telas
 {
     public class Menu : Form
     {
+        Form parent;
         private System.ComponentModel.IContainer components = null;
 
         Label lblTitle;
@@ -16,8 +17,10 @@ namespace Telas
         Button btnSenha;
         Button btnUsuario;
         Button btnSair;
-        public Menu()
+        public Menu(Form parent)
         {
+            this.parent = parent;
+
             this.lblTitle = new Campos.LabelFieldTam($"Bem vindo(a)!", 120, 15, 150, 30);
 
             this.btnCategoria = new Campos.ButtonField("Categoria", 100, 50, 100, 30);
@@ -51,6 +54,7 @@ namespace Telas
         public void btnSairClick(object sender, EventArgs e)
         {
             this.Close();
+            this.parent.Close();
         }  
 
         public void btnCategoriaClick(object sender, EventArgs e)

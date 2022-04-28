@@ -23,5 +23,14 @@ namespace Controllers
         {
             return Models.Tag.GetTags();  
         }
+
+         public static Tag DeleteTags(int Id)
+        {
+            Tag tag = Models.Tag.GetTag(Id);
+            Tag.RemoverTag(tag);
+            return tag;
+        }
+
+
     }
 }

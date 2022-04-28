@@ -51,8 +51,9 @@ namespace Telas
         {              
             try
             {
-                Menu Menus = new Menu();
-                Menus.Show();    
+                Menu Menus = new Menu(this);
+                Menus.Show();
+                this.Hide();
             }
             catch (Exception err)
             {
