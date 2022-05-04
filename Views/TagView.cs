@@ -10,13 +10,15 @@ namespace Telas
     public class TagView : Form
     {
         private System.ComponentModel.IContainer components = null;
-
+        Form parent;
         ListView listView;
         Button btnVoltar;
         Button btnInsert;
         Button btnDelete;
-        public TagView()
+        public TagView(Form parent)
         {
+
+            this.parent = parent;
 
             btnVoltar = new Campos.ButtonField("Voltar", 25, 450, 100, 30);
 			btnVoltar.Click += new EventHandler(this.btnVoltarClick);
@@ -84,7 +86,8 @@ namespace Telas
         
         public void btnInsertClick(object sender, EventArgs e)
         {
-            CadastrarTag CadastrarTags = new CadastrarTag();
+            this.Hide();
+            CadastrarTag CadastrarTags = new CadastrarTag(this);
             CadastrarTags.ShowDialog();
         }   
 

@@ -26,5 +26,12 @@ namespace Controllers
         {
             return Models.Categoria.GetCategorias();  
         }
+
+        public static Categoria DeleteCategorias(int Id)
+        {
+            Categoria categoria = Models.Categoria.GetCategoria(Id);
+            Categoria.RemoverCategoria(categoria);
+            return categoria;
+        }
     }
 }

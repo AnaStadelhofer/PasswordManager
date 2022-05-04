@@ -13,7 +13,8 @@ namespace Controllers
         public static Tag InsertTag(string Descricao)
         {
 
-            if (String.IsNullOrEmpty(Descricao)) {
+            if (String.IsNullOrEmpty(Descricao)) 
+            {
                 throw new Exception("Descrição é obrigatório");
             }
 
@@ -24,13 +25,11 @@ namespace Controllers
             return Models.Tag.GetTags();  
         }
 
-         public static Tag DeleteTags(int Id)
+        public static Tag DeleteTags(int Id)
         {
             Tag tag = Models.Tag.GetTag(Id);
             Tag.RemoverTag(tag);
             return tag;
         }
-
-
     }
 }

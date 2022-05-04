@@ -10,15 +10,15 @@ namespace Telas
     public class CadastrarTag : Form
     {
         private System.ComponentModel.IContainer components = null;
-
+        Form parent;
         TextBox txtDescricao;
         Label lblDescricao;
         Button btnVoltar;
         Button btnInsert;
 
-        public CadastrarTag()
+        public CadastrarTag(Form parent)
         {
-
+            this.parent = parent;
             this.lblDescricao = new Campos.LabelField("Descrição:", 50, 80);
             this.txtDescricao = new Campos.TextBoxField(50, 120, 200, 200);
 
@@ -42,13 +42,17 @@ namespace Telas
         public void btnVoltarClick(object sender, EventArgs e)
         {
             this.Close();
+            this.parent.Show();
         } 
 
-        public void btnInsertClick(object sender, EventArgs e)
-        {
-            TagCtrl.InsertTag(this.txtDescricao.Text);
-            this.Close();
-        }  
+            public void btnInsertClick(object sender, EventArgs e)
+            {
+                TagCtrl.InsertTag(this.txtDescricao.Text);
+                this.parent.Close();
+                
+                TagView TagViews = new TagView(this);
+                TagViews.ShowDialog();
+            }  
         
     }
 
