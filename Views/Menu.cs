@@ -53,7 +53,6 @@ namespace Telas
 
         public void btnSairClick(object sender, EventArgs e)
         {
-            this.Close();
             this.parent.Close();
         }  
 
@@ -77,7 +76,7 @@ namespace Telas
 
         public void btnTagClick(object sender, EventArgs e)
         {
-            TagView TagViews = new TagView();
+            TagView TagViews = new TagView(this);
             TagViews.ShowDialog();
         } 
 

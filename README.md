@@ -83,8 +83,8 @@ Para essa aplicação serão necessárias as seguintes tarefas:
 - [ ] Alterar Tag
 - [ ] Alterar Usuário
 - [ ] Alterar Senha
-- [ ] Excluir Categoria
-- [ ] Excluir Tag
+- [X] Excluir Categoria
+- [X] Excluir Tag
 - [ ] Excluir Usuário
 - [ ] Excluir Senha
 - [ ] Criar Relação entre Senha e Tag
