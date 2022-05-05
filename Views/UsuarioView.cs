@@ -14,6 +14,7 @@ namespace Telas
         ListView listView;
         Button btnVoltar;
         Button btnInsert;
+        Button btnDelete;
         public UsuarioView()
         {
 
@@ -24,6 +25,9 @@ namespace Telas
             
             btnInsert = new Campos.ButtonField("Cadastrar", 130, 450, 100, 30);
             btnInsert.Click += new EventHandler(this.btnInsertClick);
+
+            btnDelete = new Campos.ButtonField("Deletar", 235, 450, 100, 30);
+			btnDelete.Click += new EventHandler(this.btnDeleteClick);
 
             // Select dos registros
 
@@ -47,6 +51,7 @@ namespace Telas
             this.Controls.Add(this.listView);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnInsert);
+            this.Controls.Add(this.btnDelete);
 
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -65,6 +70,27 @@ namespace Telas
             CadastrarUsuário CadastrarUsuários = new CadastrarUsuário();
             CadastrarUsuários.ShowDialog();
         }   
+        
+        public void btnDeleteClick(object sender, EventArgs e)
+        {
+        
+            DialogResult result = MessageBox.Show("Deseja realmente deletar?", "Confirmar", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                try
+                {            
+                    if (listView.SelectedItems.Count > 0) {
+                        ListViewItem li = listView.SelectedItems[0];
+                        MessageBox.Show("O item de id " + li.Text + " foi deletado com sucesso", "Deletado" );
+                        UsuarioCtrl.DeleteUsuarios(Convert.ToInt32(li.Text));
+                    }                   
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Erro ao deletar", "Erro");
+                }
+            }
+        } 
         
     }
 
