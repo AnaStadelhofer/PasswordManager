@@ -15,11 +15,13 @@ namespace Controllers
             string Senha
         )
         {
-            if (String.IsNullOrEmpty(Nome)) {
+            if (String.IsNullOrEmpty(Nome)) 
+            {
                 throw new Exception("Nome é obrigatório");
             }
 
-            if (String.IsNullOrEmpty(Email)) {
+            if (String.IsNullOrEmpty(Email)) 
+            {
                 throw new Exception("Email é obrigatório");
             }
             
@@ -38,6 +40,13 @@ namespace Controllers
         public static IEnumerable<Usuario> VisualizarUsuario()
         {
             return Models.Usuario.GetUsuarios();  
+        }
+
+         public static Usuario DeleteUsuarios(int Id)
+        {
+            Usuario usuario = Models.Usuario.GetUsuario(Id);
+            Usuario.RemoverUsuario(usuario);
+            return usuario;
         }
     }
 }

@@ -85,10 +85,15 @@ Para essa aplicação serão necessárias as seguintes tarefas:
 - [ ] Alterar Senha
 - [X] Excluir Categoria
 - [X] Excluir Tag
-- [ ] Excluir Usuário
+- [X] Excluir Usuário
 - [ ] Excluir Senha
 - [ ] Criar Relação entre Senha e Tag
 - [ ] Excluir Relação entre Senha e Tag
+- [ ] Criar e-mail valido
+- [ ] Criar senha valida
+- [ ] As urls devem ter formato valido
+- [ ] Cor dos componentes / Desafio
+- [ ] Fluxo de telas ideal 
 
 ### Diferenciais
 
