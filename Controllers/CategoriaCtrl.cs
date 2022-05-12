@@ -9,6 +9,27 @@ namespace Controllers
 {
     public class CategoriaCtrl 
     {
+
+        public static void UpdateCategoria(
+            int Id,
+            string Nome,
+            string Descricao
+        )
+        {
+            Categoria categoria = Models.Categoria.GetCategoria(Id);
+
+            if (!String.IsNullOrEmpty(Nome))
+            {
+                categoria.Nome = Nome;
+            }
+
+            if (!String.IsNullOrEmpty(Descricao))
+            {
+                categoria.Descricao = Descricao;
+            }
+            Categoria.AlterarCategoria(Id, Nome, Descricao);
+        }
+
         public static Categoria InsertCategoria(
             string Nome,
             string Descricao

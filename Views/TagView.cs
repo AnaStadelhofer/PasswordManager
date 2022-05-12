@@ -30,7 +30,7 @@ namespace Telas
             btnDelete = new Campos.ButtonField("Deletar", 235, 450, 100, 30);
 			btnDelete.Click += new EventHandler(this.btnDeleteClick);
 
-            btnUpdate = new Campos.ButtonField("Editar", 310, 450, 100, 30);
+            btnUpdate = new Campos.ButtonField("Editar", 345, 450, 100, 30);
             btnUpdate.Click += new EventHandler(this.btnUpdateClick);
 
             // Select dos registros
