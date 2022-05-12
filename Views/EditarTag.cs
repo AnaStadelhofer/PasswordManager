@@ -56,7 +56,6 @@ namespace Telas
             TagCtrl.UpdateTag(Id, this.txtDescricao.Text);
             TagView TagViews = new TagView(this);
             TagViews.ShowDialog();
-            
         }   
 
     }

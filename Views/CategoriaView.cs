@@ -10,13 +10,16 @@ namespace Telas
     public class CategoriaView : Form
     {
         private System.ComponentModel.IContainer components = null;
-
+        Form parent;
         ListView listView;
         Button btnVoltar;
         Button btnInsert;
         Button btnDelete;
-        public CategoriaView()
+
+        Button btnUpdate;
+        public CategoriaView(Form parent)
         {
+            this.parent = parent;
 
             btnVoltar = new Campos.ButtonField("Voltar", 25, 450, 100, 30);
 			btnVoltar.Click += new EventHandler(this.btnVoltarClick);
@@ -26,6 +29,9 @@ namespace Telas
 
             btnDelete = new Campos.ButtonField("Deletar", 235, 450, 100, 30);
 			btnDelete.Click += new EventHandler(this.btnDeleteClick);
+
+            btnUpdate = new Campos.ButtonField("Editar", 345, 450, 100, 30);
+            btnUpdate.Click += new EventHandler(this.btnUpdateClick);
 
             listView = new Campos.FieldListView(25, 25, 450, 400);
 			listView.View = View.Details;
@@ -48,12 +54,37 @@ namespace Telas
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
 
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 500);
             this.Text = "Categoria";
         }
+
+        public void btnUpdateClick(object sender, EventArgs e)
+        {
+            try
+            {            
+                if (listView.SelectedItems.Count > 0) 
+                {
+                    ListViewItem li = listView.SelectedItems[0];
+                    EditarCategoria editarCategoria = new EditarCategoria(this, Convert.ToInt32(li.Text));
+                    this.Hide();
+                    editarCategoria.ShowDialog();
+
+                }  
+                else
+                {
+                    MessageBox.Show("Selecione uma tag para editar", "Erro");
+                }                 
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Selecione uma tag para editar", "Erro");
+            }
+            
+        } 
 
         public void btnVoltarClick(object sender, EventArgs e)
         {

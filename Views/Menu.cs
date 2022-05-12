@@ -58,7 +58,7 @@ namespace Telas
 
         public void btnCategoriaClick(object sender, EventArgs e)
         {
-            CategoriaView CategoriaViews = new CategoriaView();
+            CategoriaView CategoriaViews = new CategoriaView(this);
             CategoriaViews.ShowDialog();
         }
 
