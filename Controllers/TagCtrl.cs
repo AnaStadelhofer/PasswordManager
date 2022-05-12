@@ -10,6 +10,21 @@ namespace Controllers
     public class TagCtrl 
     {
 
+        public static void UpdateTag(
+            int Id,
+            string Descricao
+        )
+        {
+            Tag tag = Models.Tag.GetTag(Id);
+
+            if (!String.IsNullOrEmpty(Descricao))
+            {
+                tag.Descricao = Descricao;
+            }
+
+            Tag.AlterarTag(Id, Descricao);
+        }
+        
         public static Tag InsertTag(string Descricao)
         {
 

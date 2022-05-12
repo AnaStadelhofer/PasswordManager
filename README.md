@@ -80,7 +80,7 @@ Para essa aplicação serão necessárias as seguintes tarefas:
 - [X] Criar Usuário
 - [ ] Criar Senha
 - [ ] Alterar Categoria
-- [ ] Alterar Tag
+- [X] Alterar Tag
 - [ ] Alterar Usuário
 - [ ] Alterar Senha
 - [X] Excluir Categoria

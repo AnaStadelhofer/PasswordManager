@@ -53,7 +53,7 @@ namespace Telas
 
         public void btnSairClick(object sender, EventArgs e)
         {
-            this.parent.Close();
+            Application.Exit();
         }  
 
         public void btnCategoriaClick(object sender, EventArgs e)
