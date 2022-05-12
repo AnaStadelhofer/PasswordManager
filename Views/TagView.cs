@@ -15,6 +15,7 @@ namespace Telas
         Button btnVoltar;
         Button btnInsert;
         Button btnDelete;
+        Button btnUpdate;
         public TagView(Form parent)
         {
 
@@ -28,6 +29,9 @@ namespace Telas
 
             btnDelete = new Campos.ButtonField("Deletar", 235, 450, 100, 30);
 			btnDelete.Click += new EventHandler(this.btnDeleteClick);
+
+            btnUpdate = new Campos.ButtonField("Editar", 310, 450, 100, 30);
+            btnUpdate.Click += new EventHandler(this.btnUpdateClick);
 
             // Select dos registros
 
@@ -50,6 +54,7 @@ namespace Telas
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
         
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,7 +76,8 @@ namespace Telas
             {
                 try
                 {            
-                    if (listView.SelectedItems.Count > 0) {
+                    if (listView.SelectedItems.Count > 0) 
+                    {
                         ListViewItem li = listView.SelectedItems[0];
                         MessageBox.Show("O item de id " + li.Text + " foi deletado com sucesso", "Deletado" );
                         TagCtrl.DeleteTags(Convert.ToInt32(li.Text));
@@ -83,6 +89,30 @@ namespace Telas
                 }
             }
         }   
+
+        public void btnUpdateClick(object sender, EventArgs e)
+        {
+            try
+            {            
+                if (listView.SelectedItems.Count > 0) 
+                {
+                    ListViewItem li = listView.SelectedItems[0];
+                    EditarTag editTag = new EditarTag(this, Convert.ToInt32(li.Text));
+                    this.Hide();
+                    editTag.ShowDialog();
+
+                }  
+                else
+                {
+                    MessageBox.Show("Selecione uma tag para editar", "Erro");
+                }                 
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Selecione uma tag para editar", "Erro");
+            }
+            
+        } 
         
         public void btnInsertClick(object sender, EventArgs e)
         {
