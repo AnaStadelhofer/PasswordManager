@@ -58,8 +58,10 @@ namespace Telas
 
         public void btnCategoriaClick(object sender, EventArgs e)
         {
+            this.Hide();
             CategoriaView CategoriaViews = new CategoriaView(this);
             CategoriaViews.ShowDialog();
+            this.parent.Close();
         }
 
         public void btnSenhaClick(object sender, EventArgs e)

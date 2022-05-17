@@ -10,6 +10,7 @@ namespace Telas
     public class CategoriaView : Form
     {
         private System.ComponentModel.IContainer components = null;
+        
         Form parent;
         ListView listView;
         Button btnVoltar;
@@ -72,6 +73,7 @@ namespace Telas
                     EditarCategoria editarCategoria = new EditarCategoria(this, Convert.ToInt32(li.Text));
                     this.Hide();
                     editarCategoria.ShowDialog();
+                    this.parent.Close();
 
                 }  
                 else
@@ -88,18 +90,22 @@ namespace Telas
 
         public void btnVoltarClick(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            Menu Menus = new Menu(this);
+            Menus.ShowDialog();
         }  
 
         public void btnInsertClick(object sender, EventArgs e)
         {
-            CadastrarCategoria cadastrarCategoria = new CadastrarCategoria();
+            this.Hide();
+            CadastrarCategoria cadastrarCategoria = new CadastrarCategoria(this);
             cadastrarCategoria.ShowDialog();
+            this.parent.Close();
         } 
 
         public void btnDeleteClick(object sender, EventArgs e)
         {
-        
+            CategoriaView CategoriaViews = new CategoriaView(this);
             DialogResult result = MessageBox.Show("Deseja realmente deletar?", "Confirmar", MessageBoxButtons.YesNo);
             if(result == DialogResult.Yes)
             {
@@ -109,6 +115,9 @@ namespace Telas
                         ListViewItem li = listView.SelectedItems[0];
                         MessageBox.Show("O item de id " + li.Text + " foi deletado com sucesso", "Deletado" );
                         CategoriaCtrl.DeleteCategorias(Convert.ToInt32(li.Text));
+                        this.Hide();
+                        CategoriaViews.ShowDialog();
+                        this.parent.Close();
                     }                   
                 }
                 catch(Exception)

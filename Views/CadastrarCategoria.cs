@@ -10,17 +10,17 @@ namespace Telas
     public class CadastrarCategoria : Form
     {
         private System.ComponentModel.IContainer components = null;
-
         TextBox txtNome;
         TextBox txtDescricao;
         Label lblNome;
         Label lblDescricao;
         Button btnVoltar;
         Button btnInsert;
+        Form parent;
 
-        public CadastrarCategoria()
+        public CadastrarCategoria(Form parent)
         {
-
+            this.parent = parent;
             this.lblNome = new Campos.LabelField("Nome:", 70, 40);
             this.txtNome = new Campos.TextBoxField(70, 80, 200, 200);
             this.lblDescricao = new Campos.LabelField("Descrição:", 70, 120);
@@ -47,13 +47,19 @@ namespace Telas
 
         public void btnVoltarClick(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            CategoriaView CategoriaViews = new CategoriaView(this);
+            CategoriaViews.ShowDialog();
+            this.parent.Close();
         } 
 
         public void btnInsertClick(object sender, EventArgs e)
         {
             CategoriaCtrl.InsertCategoria(this.txtNome.Text, this.txtDescricao.Text);
-            this.Close();
+            this.Hide();
+            CategoriaView CategoriaViews = new CategoriaView(this);
+            CategoriaViews.ShowDialog();
+            this.parent.Close();
         }  
         
     }
