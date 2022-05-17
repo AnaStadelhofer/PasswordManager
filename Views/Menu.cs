@@ -70,7 +70,7 @@ namespace Telas
 
         public void btnUsuarioClick(object sender, EventArgs e)
         {
-            UsuarioView UsuarioViews = new UsuarioView();
+            UsuarioView UsuarioViews = new UsuarioView(this);
             UsuarioViews.ShowDialog();
         } 
 
