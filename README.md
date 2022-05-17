@@ -79,9 +79,9 @@ Para essa aplicação serão necessárias as seguintes tarefas:
 - [X] Criar Tag
 - [X] Criar Usuário
 - [ ] Criar Senha
-- [ ] Alterar Categoria
+- [X] Alterar Categoria
 - [X] Alterar Tag
-- [ ] Alterar Usuário
+- [X] Alterar Usuário
 - [ ] Alterar Senha
 - [X] Excluir Categoria
 - [X] Excluir Tag
@@ -90,7 +90,7 @@ Para essa aplicação serão necessárias as seguintes tarefas:
 - [ ] Criar Relação entre Senha e Tag
 - [ ] Excluir Relação entre Senha e Tag
 - [ ] Criar e-mail valido
-- [ ] Criar senha valida
+- [X] Criar senha valida
 - [ ] As urls devem ter formato valido
 - [ ] Cor dos componentes / Desafio
 - [ ] Fluxo de telas ideal 

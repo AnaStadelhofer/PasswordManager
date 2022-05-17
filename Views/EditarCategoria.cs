@@ -54,15 +54,19 @@ namespace Telas
 
         public void btnVoltarClick(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            CategoriaView CategoriaViews = new CategoriaView(this);
+            CategoriaViews.ShowDialog();
+            this.parent.Close();
         } 
 
         public void btnInsertClick(object sender, EventArgs e)
         {
-            this.Close();
             CategoriaCtrl.UpdateCategoria(Id, this.txtNome.Text, this.txtDescricao.Text);
-            CategoriaView categoriaView = new CategoriaView(this);
-            categoriaView.ShowDialog();
+            CategoriaView categoriaViews = new CategoriaView(this);
+            this.Hide();
+            categoriaViews.ShowDialog();
+            this.parent.Close();
         }  
         
     }
