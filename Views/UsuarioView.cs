@@ -11,14 +11,17 @@ namespace Telas
     {
         private System.ComponentModel.IContainer components = null;
 
+        Form parent;
         ListView listView;
         Button btnVoltar;
         Button btnInsert;
         Button btnDelete;
-        public UsuarioView()
+        Button btnUpdate;
+
+        public UsuarioView(Form parent)
         {
 
-            // 
+            this.parent = parent;
 
             btnVoltar = new Campos.ButtonField("Voltar", 25, 450, 100, 30);
 			btnVoltar.Click += new EventHandler(this.btnVoltarClick);
@@ -28,6 +31,9 @@ namespace Telas
 
             btnDelete = new Campos.ButtonField("Deletar", 235, 450, 100, 30);
 			btnDelete.Click += new EventHandler(this.btnDeleteClick);
+
+            btnUpdate = new Campos.ButtonField("Editar", 345, 450, 100, 30);
+            btnUpdate.Click += new EventHandler(this.btnUpdateClick);
 
             // Select dos registros
 
@@ -52,6 +58,7 @@ namespace Telas
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
 
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -64,6 +71,29 @@ namespace Telas
         {
             this.Close();
         } 
+
+        public void btnUpdateClick(object sender, EventArgs e)
+        {
+            try
+            {            
+                if (listView.SelectedItems.Count > 0) 
+                {
+                    ListViewItem li = listView.SelectedItems[0];
+                    EditarUsuario editUsuario = new EditarUsuario(this, Convert.ToInt32(li.Text));
+                    this.Hide();
+                    editUsuario.ShowDialog();
+
+                }  
+                else
+                {
+                    MessageBox.Show("Selecione um usuário para editar", "Erro");
+                }                 
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Selecione um usuário para editar", "Erro");
+            } 
+        }
 
         public void btnInsertClick(object sender, EventArgs e)
         {
