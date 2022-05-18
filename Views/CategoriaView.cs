@@ -105,7 +105,7 @@ namespace Telas
 
         public void btnDeleteClick(object sender, EventArgs e)
         {
-            CategoriaView CategoriaViews = new CategoriaView(this);
+        
             DialogResult result = MessageBox.Show("Deseja realmente deletar?", "Confirmar", MessageBoxButtons.YesNo);
             if(result == DialogResult.Yes)
             {
@@ -115,9 +115,11 @@ namespace Telas
                         ListViewItem li = listView.SelectedItems[0];
                         MessageBox.Show("O item de id " + li.Text + " foi deletado com sucesso", "Deletado" );
                         CategoriaCtrl.DeleteCategorias(Convert.ToInt32(li.Text));
+                        CategoriaView CategoriaViews = new CategoriaView(this);
                         this.Hide();
                         CategoriaViews.ShowDialog();
                         this.parent.Close();
+
                     }                   
                 }
                 catch(Exception)
