@@ -47,11 +47,11 @@ namespace Telas
 
             public void btnInsertClick(object sender, EventArgs e)
             {
-                TagCtrl.InsertTag(this.txtDescricao.Text);
-                this.parent.Close();
-                
+                this.Hide();
+                TagCtrl.InsertTag(this.txtDescricao.Text); 
                 TagView TagViews = new TagView(this);
                 TagViews.ShowDialog();
+                this.parent.Close();
             }  
         
     }

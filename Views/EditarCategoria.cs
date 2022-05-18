@@ -54,10 +54,8 @@ namespace Telas
 
         public void btnVoltarClick(object sender, EventArgs e)
         {
-            this.Hide();
-            CategoriaView CategoriaViews = new CategoriaView(this);
-            CategoriaViews.ShowDialog();
-            this.parent.Close();
+            this.Close();
+            this.parent.Show();
         } 
 
         public void btnInsertClick(object sender, EventArgs e)

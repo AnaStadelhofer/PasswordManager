@@ -83,6 +83,10 @@ namespace Telas
                         ListViewItem li = listView.SelectedItems[0];
                         MessageBox.Show("O item de id " + li.Text + " foi deletado com sucesso", "Deletado" );
                         TagCtrl.DeleteTags(Convert.ToInt32(li.Text));
+                        TagView TagViews = new TagView(this);
+                        this.Hide();
+                        TagViews.ShowDialog();
+                        this.parent.Close();
                     }                   
                 }
                 catch(Exception)
@@ -102,6 +106,7 @@ namespace Telas
                     EditarTag editTag = new EditarTag(this, Convert.ToInt32(li.Text));
                     this.Hide();
                     editTag.ShowDialog();
+                    this.parent.Close();
 
                 }  
                 else
@@ -121,6 +126,7 @@ namespace Telas
             this.Hide();
             CadastrarTag CadastrarTags = new CadastrarTag(this);
             CadastrarTags.ShowDialog();
+            this.parent.Close();
         }   
 
     }
