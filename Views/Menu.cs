@@ -66,20 +66,26 @@ namespace Telas
 
         public void btnSenhaClick(object sender, EventArgs e)
         {
+            this.Hide();
             SenhaView SenhaViews = new SenhaView();
             SenhaViews.ShowDialog();
+            this.parent.Close();
         }   
 
         public void btnUsuarioClick(object sender, EventArgs e)
         {
+            this.Hide();
             UsuarioView UsuarioViews = new UsuarioView(this);
             UsuarioViews.ShowDialog();
+            this.parent.Close();
         } 
 
         public void btnTagClick(object sender, EventArgs e)
         {
+            this.Hide();
             TagView TagViews = new TagView(this);
             TagViews.ShowDialog();
+            this.parent.Close();
         } 
 
     }

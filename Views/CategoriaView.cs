@@ -16,7 +16,6 @@ namespace Telas
         Button btnVoltar;
         Button btnInsert;
         Button btnDelete;
-
         Button btnUpdate;
         public CategoriaView(Form parent)
         {
