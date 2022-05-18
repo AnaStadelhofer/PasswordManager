@@ -69,7 +69,9 @@ namespace Telas
         // Funções dos botões
         public void btnVoltarClick(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            Menu Menus = new Menu(this);
+            Menus.ShowDialog();
         } 
 
         public void btnUpdateClick(object sender, EventArgs e)
