@@ -10,7 +10,7 @@ namespace Telas
     public class CadastrarUsuário : Form
     {
         private System.ComponentModel.IContainer components = null;
-
+        Form parent;
         TextBox txtNome;
         TextBox txtEmail;
         Label lblNome;
@@ -20,9 +20,9 @@ namespace Telas
         Label lblSenha;
         TextBox txtSenha;
 
-        public CadastrarUsuário()
+        public CadastrarUsuário(Form parent)
         {
-
+            this.parent = parent;
             // Componentes em tela
 
             this.lblNome = new Campos.LabelField("Nome:", 70, 40);
@@ -63,6 +63,7 @@ namespace Telas
         public void btnVoltarClick(object sender, EventArgs e)
         {
             this.Close();
+            this.parent.Show();
         } 
 
         public void btnInsertClick(object sender, EventArgs e)
@@ -78,7 +79,10 @@ namespace Telas
             String Message = "Usuário cadastrado com sucesso!";
             String Title = "Operação feita!";
             MessageBox.Show(Message, Title);
-            this.Close();
+            this.Hide();
+            UsuarioView UsuarioViews = new UsuarioView(this);
+            UsuarioViews.ShowDialog();
+            this.parent.Close();
         }  
         
     }

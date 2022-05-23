@@ -84,6 +84,7 @@ namespace Telas
                     EditarUsuario editUsuario = new EditarUsuario(this, Convert.ToInt32(li.Text));
                     this.Hide();
                     editUsuario.ShowDialog();
+                    this.parent.Close();
 
                 }  
                 else
@@ -99,8 +100,10 @@ namespace Telas
 
         public void btnInsertClick(object sender, EventArgs e)
         {
-            CadastrarUsuário CadastrarUsuários = new CadastrarUsuário();
+            CadastrarUsuário CadastrarUsuários = new CadastrarUsuário(this);
+            this.Hide();
             CadastrarUsuários.ShowDialog();
+            this.parent.Close();
         }   
         
         public void btnDeleteClick(object sender, EventArgs e)
@@ -115,6 +118,11 @@ namespace Telas
                         ListViewItem li = listView.SelectedItems[0];
                         MessageBox.Show("O item de id " + li.Text + " foi deletado com sucesso", "Deletado" );
                         UsuarioCtrl.DeleteUsuarios(Convert.ToInt32(li.Text));
+                        UsuarioView usuarioView = new UsuarioView(this);
+                        this.Hide();
+                        usuarioView.ShowDialog();
+                        this.parent.Close();
+                        
                     }                   
                 }
                 catch(Exception)
