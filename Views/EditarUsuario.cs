@@ -69,15 +69,16 @@ namespace Telas
         public void btnVoltarClick(object sender, EventArgs e)
         {
             this.Close();
+            this.parent.Show();
         } 
 
         public void btnInsertClick(object sender, EventArgs e)
-        {
-            this.Close();
-            
+        {        
             UsuarioCtrl.UpdateUsuario(Id, this.txtNome.Text, this.txtEmail.Text, this.txtSenha.Text);
+            this.Hide();
             UsuarioView UsuarioViews = new UsuarioView(this);
             UsuarioViews.ShowDialog();
+            this.parent.Close();
             
         }   
         
