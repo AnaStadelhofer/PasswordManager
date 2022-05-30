@@ -51,15 +51,20 @@ namespace Telas
         {              
             try
             {
-                Menu Menus = new Menu(this);
-                Menus.Show();
-                this.Hide();
+                Usuario.Auth(this.txtUser.Text, this.txtPass.Text);
+                if (Usuario.UsuarioAuth != null) 
+                {
+                    Menu Menus = new Menu(this);
+                    Menus.Show();
+                    this.Hide(); 
+                } 
             }
             catch (Exception err)
             {
                 MessageBox.Show("Usuário ou senha inválido", "Erro");
             }
         }
+
         public void btnSairClick(object sender, EventArgs e)
         {
             this.Close();
