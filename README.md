@@ -69,7 +69,7 @@ A aplicação conta com 5 entidades:
 
 Para essa aplicação serão necessárias as seguintes tarefas:
 
-- [ ] Processo de Login
+- [X] Processo de Login
 - [X] Menu Principal
 - [X] Lista de Categorias
 - [X] Lista de Tags
@@ -93,7 +93,7 @@ Para essa aplicação serão necessárias as seguintes tarefas:
 - [X] Criar senha valida
 - [ ] As urls devem ter formato valido
 - [ ] Cor dos componentes / Desafio
-- [ ] Fluxo de telas ideal 
+- [X] Fluxo de telas ideal 
 
 ### Diferenciais
 
