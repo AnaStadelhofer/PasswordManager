@@ -95,6 +95,7 @@ Para essa aplicação serão necessárias as seguintes tarefas:
 - [ ] E-mail devem ser validos
 - [x] Cor dos componentes / Desafio
 - [X] Fluxo de telas ideal 
+- [ ] Cadastro de usuário quando base for vazia / Desafio
 
 ### Diferenciais
 
