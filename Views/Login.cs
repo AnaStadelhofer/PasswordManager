@@ -22,7 +22,7 @@ namespace Telas
             this.lblUser = new Campos.LabelField("Usuário", 120, 30);
 
             this.txtUser = new Campos.TextBoxField(50, 60, 200, 20);
-    
+
             this.lblPassword = new Campos.LabelField("Senha", 120, 100);
 
             this.txtPass = new Campos.TextBoxField(50, 130, 200, 20);

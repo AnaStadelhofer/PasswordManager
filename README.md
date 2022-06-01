@@ -92,8 +92,10 @@ Para essa aplicação serão necessárias as seguintes tarefas:
 - [ ] Criar e-mail valido
 - [X] Criar senha valida
 - [ ] As urls devem ter formato valido
-- [ ] Cor dos componentes / Desafio
+- [ ] E-mail devem ser validos
+- [x] Cor dos componentes / Desafio
 - [X] Fluxo de telas ideal 
+- [ ] Cadastro de usuário quando base for vazia / Desafio
 
 ### Diferenciais
 
