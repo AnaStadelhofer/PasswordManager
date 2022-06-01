@@ -20,8 +20,9 @@ namespace Telas
         public Menu(Form parent)
         {
             this.parent = parent;
+            this.BackColor = Color.FromArgb(179, 193, 220);
 
-            this.lblTitle = new Campos.LabelFieldTam($"Bem vindo(a)!", 120, 15, 150, 30);
+            this.lblTitle = new Campos.LabelFieldTam($"Bem vindo(a) " + Usuario.UsuarioAuth.Nome + " !", 100, 15, 150, 30);
 
             this.btnCategoria = new Campos.ButtonField("Categoria", 100, 50, 100, 30);
 			btnCategoria.Click += new EventHandler(this.btnCategoriaClick);
