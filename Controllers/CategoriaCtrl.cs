@@ -43,7 +43,7 @@ namespace Controllers
             return new Categoria(Nome, Descricao);
         }
 
-        public static List<Categoria> VisualizarCategoria()
+        public static IEnumerable<Categoria> VisualizarCategoria()
         {
             return Models.Categoria.GetCategorias();  
         }

@@ -26,6 +26,24 @@ namespace lib
             }
         }
 
+        public class ComboBoxField : ComboBox
+        {
+            public ComboBoxField(int x, int y, int z, int w)
+            {
+                this.Location = new Point(x, y);
+                this.Size = new Size(z, w);
+            }
+        }
+
+        public class CheckedListBoxField : CheckedListBox
+        {
+            public CheckedListBoxField(int x, int y, int z, int w)
+            {
+                this.Location = new Point(x, y);
+                this.Size = new Size(z, w);
+            }
+        }
+
         public class LabelField : Label
         {
             public LabelField(string Text, int x, int y)

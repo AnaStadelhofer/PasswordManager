@@ -68,7 +68,7 @@ namespace Telas
         public void btnSenhaClick(object sender, EventArgs e)
         {
             this.Hide();
-            SenhaView SenhaViews = new SenhaView();
+            SenhaView SenhaViews = new SenhaView(this);
             SenhaViews.ShowDialog();
             this.parent.Close();
         }   

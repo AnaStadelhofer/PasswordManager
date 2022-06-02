@@ -45,14 +45,14 @@ namespace Telas
             this.parent.Show();
         } 
 
-            public void btnInsertClick(object sender, EventArgs e)
-            {
-                this.Hide();
-                TagCtrl.InsertTag(this.txtDescricao.Text); 
-                TagView TagViews = new TagView(this);
-                TagViews.ShowDialog();
-                this.parent.Close();
-            }  
+        public void btnInsertClick(object sender, EventArgs e)
+        {
+            this.Hide();
+            TagCtrl.InsertTag(this.txtDescricao.Text); 
+            TagView TagViews = new TagView(this);
+            TagViews.ShowDialog();
+            this.parent.Close();
+        }  
         
     }
 
