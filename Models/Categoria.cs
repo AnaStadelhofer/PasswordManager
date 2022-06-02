@@ -27,10 +27,7 @@ namespace Models
 
         public override string ToString()
         {
-            return $"\n ---------------------------------------"
-                + $"\n ID: {this.Id}"
-                + $"\n Nome: {this.Nome}"
-                + $"\n Descricao: {this.Descricao}";
+            return $"{this.Id} - {this.Nome}";
         }
 
         public override bool Equals(object obj)
@@ -68,10 +65,10 @@ namespace Models
         }
 
 
-        public static List<Categoria> GetCategorias()
+        public static IEnumerable<Categoria> GetCategorias()
         {
             Context db = new Context();
-            return (from Categoria in db.Categorias select Categoria).ToList();
+            return (from Categoria in db.Categorias select Categoria);
         }
 
         public static Categoria GetCategoria(int Id)
