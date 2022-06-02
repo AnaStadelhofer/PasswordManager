@@ -32,7 +32,7 @@ namespace Telas
             {
                 ListViewItem list = new ListViewItem(item.Id + "");
                 list.SubItems.Add(item.Nome);
-                list.SubItems.Add(item.CategoriaId + "");
+                list.SubItems.Add(item.Categoria + "");
                 list.SubItems.Add(item.Url);
                 list.SubItems.Add(item.Usuario);
                 list.SubItems.Add(item.SenhaEncrypt);
