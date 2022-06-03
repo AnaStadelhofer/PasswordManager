@@ -15,7 +15,7 @@ namespace Telas
         Button btnVoltar;
         Button btnInsert;
         Button btnUpdate;
-
+        Button btnDelete;
 
         public SenhaView(Form parent)
         {
@@ -25,6 +25,9 @@ namespace Telas
 
             btnInsert = new Campos.ButtonField("Cadastrar", 130, 450, 100, 30);
             btnInsert.Click += new EventHandler(this.btnInsertClick);
+
+            btnDelete = new Campos.ButtonField("Deletar", 235, 450, 100, 30);
+			btnDelete.Click += new EventHandler(this.btnDeleteClick);
 
             btnUpdate = new Campos.ButtonField("Editar", 345, 450, 100, 30);
             btnUpdate.Click += new EventHandler(this.btnUpdateClick);
@@ -60,6 +63,7 @@ namespace Telas
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
 
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -106,7 +110,33 @@ namespace Telas
                 MessageBox.Show("Selecione uma senha para editar", "Erro");
             }
             
-        } 
+        }
+
+        public void btnDeleteClick(object sender, EventArgs e)
+        {
+        
+            DialogResult result = MessageBox.Show("Deseja realmente deletar?", "Confirmar", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                try
+                {            
+                    if (listView.SelectedItems.Count > 0) {
+                        ListViewItem li = listView.SelectedItems[0];
+                        MessageBox.Show("O item de id " + li.Text + " foi deletado com sucesso", "Deletado" );
+                        SenhaCtrl.DeleteSenha(Convert.ToInt32(li.Text));
+                        SenhaView senhaView = new SenhaView(this);
+                        this.Hide();
+                        senhaView.ShowDialog();
+                        this.parent.Close();
+
+                    }                   
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Erro ao deletar", "Erro");
+                }
+            }
+        }
 
         
     }
