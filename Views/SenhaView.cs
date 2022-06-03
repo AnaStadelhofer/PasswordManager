@@ -14,6 +14,8 @@ namespace Telas
         Form parent;
         Button btnVoltar;
         Button btnInsert;
+        Button btnUpdate;
+
 
         public SenhaView(Form parent)
         {
@@ -23,6 +25,9 @@ namespace Telas
 
             btnInsert = new Campos.ButtonField("Cadastrar", 130, 450, 100, 30);
             btnInsert.Click += new EventHandler(this.btnInsertClick);
+
+            btnUpdate = new Campos.ButtonField("Editar", 345, 450, 100, 30);
+            btnUpdate.Click += new EventHandler(this.btnUpdateClick);
 
             // Select dos registros
 
@@ -54,6 +59,7 @@ namespace Telas
             this.Controls.Add(this.listView);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnInsert);
+            this.Controls.Add(this.btnUpdate);
 
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -76,6 +82,32 @@ namespace Telas
             CadastrarSenhas.ShowDialog();
             this.parent.Close();
         }
+
+        public void btnUpdateClick(object sender, EventArgs e)
+        {
+            try
+            {            
+                if (listView.SelectedItems.Count > 0) 
+                {
+                    ListViewItem li = listView.SelectedItems[0];
+                    EditarSenha editarSenha = new EditarSenha(this, Convert.ToInt32(li.Text));
+                    this.Hide();
+                    editarSenha.ShowDialog();
+                    this.parent.Close();
+
+                }  
+                else
+                {
+                    MessageBox.Show("Selecione uma senha para editar", "Erro");
+                }                 
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Selecione uma senha para editar", "Erro");
+            }
+            
+        } 
+
         
     }
 

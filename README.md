@@ -78,11 +78,11 @@ Para essa aplicação serão necessárias as seguintes tarefas:
 - [X] Criar Categoria
 - [X] Criar Tag
 - [X] Criar Usuário
-- [ ] Criar Senha
+- [X] Criar Senha
 - [X] Alterar Categoria
 - [X] Alterar Tag
 - [X] Alterar Usuário
-- [ ] Alterar Senha
+- [X] Alterar Senha
 - [X] Excluir Categoria
 - [X] Excluir Tag
 - [X] Excluir Usuário
