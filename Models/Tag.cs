@@ -26,9 +26,7 @@ namespace Models
 
         public override string ToString()
         {
-            return $"\n ---------------------------------------"
-                + $"\n ID: {this.Id}"
-                + $"\n Descricao: {this.Descricao}";
+            return $"{this.Id} - {this.Descricao}";
         }
 
         public override bool Equals(object obj)
