@@ -71,7 +71,5 @@ namespace Telas
         {
             this.Close();
         }  
-
     }
-
 }

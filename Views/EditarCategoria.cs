@@ -60,11 +60,18 @@ namespace Telas
 
         public void btnInsertClick(object sender, EventArgs e)
         {
-            CategoriaCtrl.UpdateCategoria(Id, this.txtNome.Text, this.txtDescricao.Text);
-            CategoriaView categoriaViews = new CategoriaView(this);
-            this.Hide();
-            categoriaViews.ShowDialog();
-            this.parent.Close();
+            try
+            {
+                CategoriaCtrl.UpdateCategoria(Id, this.txtNome.Text, this.txtDescricao.Text);
+                CategoriaView categoriaViews = new CategoriaView(this);
+                this.Hide();
+                categoriaViews.ShowDialog();
+                this.parent.Close();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }  
         
     }

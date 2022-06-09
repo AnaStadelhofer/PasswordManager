@@ -15,6 +15,8 @@ namespace Controllers
             string Senha
         )
         {
+            Regex validateEmailRegex = new Regex("^\\S+@\\S+\\.\\S+$");
+            
             if (String.IsNullOrEmpty(Nome)) 
             {
                 throw new Exception("Nome é obrigatório");
@@ -23,6 +25,11 @@ namespace Controllers
             if (String.IsNullOrEmpty(Email)) 
             {
                 throw new Exception("Email é obrigatório");
+            }
+
+            if(!validateEmailRegex.IsMatch(Email))
+            {
+                throw new Exception("Email está invalido");
             }
             
             if (String.IsNullOrEmpty(Senha) || Senha.Length <= 8)
@@ -50,23 +57,27 @@ namespace Controllers
             string Email,
             string Senha
         )
-        {
+        {   
             Usuario usuario = Models.Usuario.GetUsuario(Id);
-
+            Regex validateEmailRegex = new Regex("^\\S+@\\S+\\.\\S+$");
             if (!String.IsNullOrEmpty(Nome))
             {
                 usuario.Nome = Nome;
             }
 
-            if (!String.IsNullOrEmpty(Email))
+            if (validateEmailRegex.IsMatch(Email))
             {
                 usuario.Email = Email;
+            } 
+            else 
+            {
+                throw new Exception("Email inválido");
             }
 
             if (!String.IsNullOrEmpty(Senha))
             {
                 
-                if (String.IsNullOrEmpty(Senha) || Senha.Length <= 8)
+                if (String.IsNullOrEmpty(Senha) || Senha.Length < 8)
                 {
                     throw new Exception("Senha está inválida");
                 }
@@ -83,7 +94,7 @@ namespace Controllers
             Usuario.AlterarUsuario(Id, Nome, Email, Senha);
         }
 
-         public static Usuario DeleteUsuarios(int Id)
+        public static Usuario DeleteUsuarios(int Id)
         {
             Usuario usuario = Models.Usuario.GetUsuario(Id);
             Usuario.RemoverUsuario(usuario);

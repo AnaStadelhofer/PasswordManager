@@ -110,7 +110,8 @@ namespace Telas
             {
                 try
                 {            
-                    if (listView.SelectedItems.Count > 0) {
+                    if (listView.SelectedItems.Count > 0) 
+                    {
                         ListViewItem li = listView.SelectedItems[0];
                         MessageBox.Show("O item de id " + li.Text + " foi deletado com sucesso", "Deletado" );
                         CategoriaCtrl.DeleteCategorias(Convert.ToInt32(li.Text));
@@ -118,7 +119,6 @@ namespace Telas
                         this.Hide();
                         CategoriaViews.ShowDialog();
                         this.parent.Close();
-
                     }                   
                 }
                 catch(Exception)

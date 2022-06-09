@@ -15,7 +15,8 @@ namespace Controllers
             
         )
         {
-            if (TagId != null) {
+            if (TagId != null) 
+            {
                 throw new Exception("É obrigatorio informar uma Tag");
             }
             return new SenhaTag(SenhaId, TagId);

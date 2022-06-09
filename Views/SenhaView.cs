@@ -98,7 +98,6 @@ namespace Telas
                     this.Hide();
                     editarSenha.ShowDialog();
                     this.parent.Close();
-
                 }  
                 else
                 {
@@ -120,7 +119,8 @@ namespace Telas
             {
                 try
                 {            
-                    if (listView.SelectedItems.Count > 0) {
+                    if (listView.SelectedItems.Count > 0) 
+                    {
                         ListViewItem li = listView.SelectedItems[0];
                         MessageBox.Show("O item de id " + li.Text + " foi deletado com sucesso", "Deletado" );
                         SenhaCtrl.DeleteSenha(Convert.ToInt32(li.Text));

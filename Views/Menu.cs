@@ -10,7 +10,6 @@ namespace Telas
     {
         Form parent;
         private System.ComponentModel.IContainer components = null;
-
         Label lblTitle;
         Button btnCategoria;
         Button btnTags;
