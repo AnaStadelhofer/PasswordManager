@@ -64,7 +64,6 @@ namespace Models
             db.SaveChanges();
         }
 
-
         public static IEnumerable<Categoria> GetCategorias()
         {
             Context db = new Context();

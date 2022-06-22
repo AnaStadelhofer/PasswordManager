@@ -114,12 +114,19 @@ namespace Telas
 
         public void btnInsertClick(object sender, EventArgs e)
         {
-            string[] categorias = this.cbCategoria.Text.Split('-');
-            SenhaCtrl.UpdateSenha(Id, this.txtNome.Text, Convert.ToInt32(categorias[0].Trim()), this.txtUrl.Text, this.txtUser.Text, this.txtSenha.Text, this.txtProcedimento.Text);
-            this.Hide();
-            SenhaView SenhaViews = new SenhaView(this);
-            SenhaViews.ShowDialog();
-            this.parent.Close();
+            try
+            {
+                string[] categorias = this.cbCategoria.Text.Split('-');
+                SenhaCtrl.UpdateSenha(Id, this.txtNome.Text, Convert.ToInt32(categorias[0].Trim()), this.txtUrl.Text, this.txtUser.Text, this.txtSenha.Text, this.txtProcedimento.Text);
+                this.Hide();
+                SenhaView SenhaViews = new SenhaView(this);
+                SenhaViews.ShowDialog();
+                this.parent.Close();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         } 
     }
 }

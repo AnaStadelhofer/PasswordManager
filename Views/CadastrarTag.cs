@@ -47,8 +47,18 @@ namespace Telas
 
         public void btnInsertClick(object sender, EventArgs e)
         {
+            try
+            {
+                TagCtrl.InsertTag(this.txtDescricao.Text); 
+                String Message = "Tag cadastrada com sucesso!";
+                String Title = "Operação feita!";
+                MessageBox.Show(Message, Title);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Preencha todos os campos!", "Erro");
+            }
             this.Hide();
-            TagCtrl.InsertTag(this.txtDescricao.Text); 
             TagView TagViews = new TagView(this);
             TagViews.ShowDialog();
             this.parent.Close();

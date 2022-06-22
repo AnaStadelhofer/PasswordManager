@@ -73,12 +73,19 @@ namespace Telas
         } 
 
         public void btnInsertClick(object sender, EventArgs e)
-        {        
-            UsuarioCtrl.UpdateUsuario(Id, this.txtNome.Text, this.txtEmail.Text, this.txtSenha.Text);
-            this.Hide();
-            UsuarioView UsuarioViews = new UsuarioView(this);
-            UsuarioViews.ShowDialog();
-            this.parent.Close();
+        {
+            try 
+            {
+                UsuarioCtrl.UpdateUsuario(Id, this.txtNome.Text, this.txtEmail.Text, this.txtSenha.Text);
+                this.Hide();
+                UsuarioView UsuarioViews = new UsuarioView(this);
+                UsuarioViews.ShowDialog();
+                this.parent.Close();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
             
         }   
         

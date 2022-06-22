@@ -18,7 +18,6 @@ namespace Telas
         Button btnUpdate;
         public TagView(Form parent)
         {
-
             this.parent = parent;
 
             btnVoltar = new Campos.ButtonField("Voltar", 25, 450, 100, 30);

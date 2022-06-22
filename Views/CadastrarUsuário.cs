@@ -71,14 +71,15 @@ namespace Telas
             try
             {
                 UsuarioCtrl.InsertUsuario(this.txtNome.Text, this.txtEmail.Text, this.txtSenha.Text);
+                String Message = "Usuário cadastrado com sucesso!";
+                String Title = "Operação feita!";
+                MessageBox.Show(Message, Title);
             }
             catch(Exception)
             {
                 MessageBox.Show("Preencha todos os campos!", "Erro");
             }
-            String Message = "Usuário cadastrado com sucesso!";
-            String Title = "Operação feita!";
-            MessageBox.Show(Message, Title);
+            
             this.Hide();
             UsuarioView UsuarioViews = new UsuarioView(this);
             UsuarioViews.ShowDialog();

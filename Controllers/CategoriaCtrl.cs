@@ -36,7 +36,8 @@ namespace Controllers
             
         )
         {
-            if (String.IsNullOrEmpty(Nome)) {
+            if (String.IsNullOrEmpty(Nome)) 
+            {
                 throw new Exception("Nome é obrigatório");
             }
 
