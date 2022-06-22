@@ -55,7 +55,17 @@ namespace Telas
 
         public void btnInsertClick(object sender, EventArgs e)
         {
-            CategoriaCtrl.InsertCategoria(this.txtNome.Text, this.txtDescricao.Text);
+            try
+            {
+                CategoriaCtrl.InsertCategoria(this.txtNome.Text, this.txtDescricao.Text);
+                String Message = "Usuário cadastrado com sucesso!";
+                String Title = "Operação feita!";
+                MessageBox.Show(Message, Title);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Preencha todos os campos!", "Erro");
+            }
             this.Hide();
             CategoriaView CategoriaViews = new CategoriaView(this);
             CategoriaViews.ShowDialog();

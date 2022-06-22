@@ -86,13 +86,12 @@ Para essa aplicação serão necessárias as seguintes tarefas:
 - [X] Excluir Categoria
 - [X] Excluir Tag
 - [X] Excluir Usuário
-- [ ] Excluir Senha
+- [X] Excluir Senha
 - [ ] Criar Relação entre Senha e Tag
 - [ ] Excluir Relação entre Senha e Tag
-- [ ] Criar e-mail valido
+- [X] Criar e-mail valido
 - [X] Criar senha valida
 - [ ] As urls devem ter formato valido
-- [ ] E-mail devem ser validos
 - [x] Cor dos componentes / Desafio
 - [X] Fluxo de telas ideal 
 - [ ] Cadastro de usuário quando base for vazia / Desafio
