@@ -110,7 +110,7 @@ namespace Telas
             try
             {
                 SenhaCtrl.InsertSenha(this.txtNome.Text, Convert.ToInt32(categorias[0].Trim()), this.txtUrl.Text, this.txtUser.Text, this.txtSenha.Text, this.txtProcedimento.Text);
-                String Message = "Usuário cadastrado com sucesso!";
+                String Message = "Senha cadastrado com sucesso!";
                 String Title = "Operação feita!";
                 MessageBox.Show(Message, Title);
             }

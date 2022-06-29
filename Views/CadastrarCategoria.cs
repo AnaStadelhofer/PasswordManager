@@ -58,7 +58,7 @@ namespace Telas
             try
             {
                 CategoriaCtrl.InsertCategoria(this.txtNome.Text, this.txtDescricao.Text);
-                String Message = "Usuário cadastrado com sucesso!";
+                String Message = "Categoria cadastrada com sucesso!";
                 String Title = "Operação feita!";
                 MessageBox.Show(Message, Title);
             }
